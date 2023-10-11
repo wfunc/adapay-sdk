@@ -3,7 +3,7 @@ package adapay
 import (
 	"strings"
 
-	adapayCore "gtlb.zhongzefun.com/epay/adapay-sdk/adapay-core"
+	adapayCore "github.com/wfunc/adapay-sdk/adapay-core"
 )
 
 type corpMemberInterface interface {

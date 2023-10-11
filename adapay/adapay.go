@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	adapayCore "gtlb.zhongzefun.com/epay/adapay-sdk/adapay-core"
+	adapayCore "github.com/wfunc/adapay-sdk/adapay-core"
 )
 
 type Adapay struct {

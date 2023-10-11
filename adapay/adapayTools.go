@@ -1,6 +1,6 @@
 package adapay
 
-import adapayCore "gtlb.zhongzefun.com/epay/adapay-sdk/adapay-core"
+import adapayCore "github.com/wfunc/adapay-sdk/adapay-core"
 
 type adapayToolsInterface interface {
 	DownloadBill(bill_date string, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)

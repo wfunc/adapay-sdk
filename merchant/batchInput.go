@@ -1,6 +1,6 @@
 package merchant
 
-import adapayCore "gtlb.zhongzefun.com/epay/adapay-sdk/adapay-core"
+import adapayCore "github.com/wfunc/adapay-sdk/adapay-core"
 
 type batchInputInterface interface {
 	MerConf(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
