@@ -9,6 +9,8 @@ import (
 type memberInterface interface {
 	Create(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
 
+	RealName(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
+
 	Query(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
 
 	Update(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
@@ -22,6 +24,11 @@ type Member struct {
 
 func (m *Member) Create(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error) {
 	reqUrl := BASE_URL + MEMBER_CREATE
+	return adapayCore.RequestAdaPay(reqUrl, adapayCore.POST, reqParam, m.HandleConfig(multiMerchConfigId...))
+}
+
+func (m *Member) RealName(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error) {
+	reqUrl := BASE_URL + MEMBER_REALNAME
 	return adapayCore.RequestAdaPay(reqUrl, adapayCore.POST, reqParam, m.HandleConfig(multiMerchConfigId...))
 }
 

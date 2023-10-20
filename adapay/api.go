@@ -22,6 +22,7 @@ const REFUND_QUERY = "/v1/payments/refunds"
 const BILL_DOWNLOAD = "/v1/bill/download"
 
 const MEMBER_CREATE = "/v1/members"
+const MEMBER_REALNAME = "/v1/members/realname"
 const MEMBER_QUERY = "/v1/members/{member_id}"
 const MEMBER_QUERY_LIST = "/v1/members/list"
 const MEMBER_UPDATE = "/v1/members/update"
