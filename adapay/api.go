@@ -13,6 +13,7 @@ const PAYMENT_CONFIRM = "/v1/payments/confirm"
 const PAYMENT_QUERY_CONFIRM = "/v1/payments/confirm/{payment_confirm_id}"
 const PAYMENT_QUERY_CONFIRM_LIST = "/v1/payments/confirm/list"
 const PAYMENT_REVERSE = "/v1/payments/reverse"
+const PAYMENT_CONFIRM_REVERSE = "/v1/payments/confirm/reverse"
 const PAYMENT_QUERY_REVERSE = "/v1/payments/reverse/{reverse_id}"
 const PAYMENT_QUERY_REVERSE_LIST = "/v1/payments/reverse/list"
 

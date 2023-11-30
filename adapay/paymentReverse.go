@@ -12,10 +12,17 @@ type paymentReverseInterface interface {
 	Query(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
 
 	QueryList(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
+
+	PaymentConfirmReverse(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
 }
 
 type PaymentReverse struct {
 	*Adapay
+}
+
+func (p *PaymentReverse) PaymentConfirmReverse(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error) {
+	reqUrl := BASE_URL + PAYMENT_CONFIRM_REVERSE
+	return adapayCore.RequestAdaPay(reqUrl, adapayCore.POST, reqParam, p.HandleConfig(multiMerchConfigId...))
 }
 
 func (p *PaymentReverse) Create(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error) {
