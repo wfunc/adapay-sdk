@@ -21,6 +21,8 @@ type settleAccountInterface interface {
 
 	Balance(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
 
+	BalancePay(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
+
 	Commission(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
 
 	CommissionList(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error)
@@ -62,6 +64,11 @@ func (s *SettleAccount) Update(reqParam map[string]interface{}, multiMerchConfig
 func (s *SettleAccount) Balance(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error) {
 	reqUrl := BASE_URL + SETTLE_ACCOUNT_BALANCE
 	return adapayCore.RequestAdaPay(reqUrl, adapayCore.GET, reqParam, s.HandleConfig(multiMerchConfigId...))
+}
+
+func (s *SettleAccount) BalancePay(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error) {
+	reqUrl := BASE_URL + SETTLE_ACCOUNT_BALANCE_PAY
+	return adapayCore.RequestAdaPay(reqUrl, adapayCore.POST, reqParam, s.HandleConfig(multiMerchConfigId...))
 }
 
 func (s *SettleAccount) Commission(reqParam map[string]interface{}, multiMerchConfigId ...string) (map[string]interface{}, *adapayCore.ApiError, error) {

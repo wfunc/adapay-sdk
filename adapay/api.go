@@ -34,6 +34,7 @@ const SETTLE_ACCOUNT_DELETE = "/v1/settle_accounts/delete"
 const SETTLE_ACCOUNT_DETAIL_QUERY = "/v1/settle_accounts/settle_details"
 const SETTLE_ACCOUNT_MODIFY = "/v1/settle_accounts/modify"
 const SETTLE_ACCOUNT_BALANCE = "/v1/settle_accounts/balance"
+const SETTLE_ACCOUNT_BALANCE_PAY = "/v1/settle_accounts/balancePay"
 const SETTLE_ACCOUNT_COMMISSIONS = "/v1/settle_accounts/commissions"
 const SETTLE_ACCOUNT_COMMISSIONS_LIST = "/v1/settle_accounts/commissions/list"
 
